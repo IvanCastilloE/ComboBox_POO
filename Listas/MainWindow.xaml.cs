@@ -34,5 +34,13 @@ namespace Listas
                 cbBox.Items.Add(cbi);
             }
         }
+
+        private void cbBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBoxItem cbi = (ComboBoxItem)cbBox.SelectedItem;//Tener acceso alItem seleccionado
+            Persona persona = (Persona)cbi.Content;//tomo los datos de lo que seleccione
+            lblNombre.Content = persona.Nombre;//Asigno el contenido de persona al atributo Content de mi label
+            lblApellido.Content = persona.Apellido;
+        }
     }
 }
